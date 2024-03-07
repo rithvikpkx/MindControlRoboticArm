@@ -13,17 +13,17 @@ BAUD_RATE = 9600
 ser = serial.Serial(HAND_CONTROLLER_COM_PORT, BAUD_RATE)
 
 
-BLINK_STREANGTH_GREATER_THAN = 80
+BLINK_STREANGTH_GREATER_THAN = 10
 blink_count = 0
 blink_start_time = time.time()
-blink_interval = 10  # 2-second interval for counting blinks
+blink_interval = 10000  # 2-second interval for counting blinks
 blink_window = deque(maxlen=10)  # Window size for storing blink data
 
-ATTENTION_STREANGTH_GREATER_THAN = 40
+ATTENTION_STREANGTH_GREATER_THAN = 10
 ATTENTION_COUNT_GREATER_THAN = 3
 attention_start_time = time.time()
 attention_count = 0
-attention_interval = 5  # 5-second interval for counting attention data
+attention_interval = 100000  # 5-second interval for counting attention data
 attention_window = deque(maxlen=10)  # Window size for storing attention data
 
 
