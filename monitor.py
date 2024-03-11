@@ -2,7 +2,7 @@ import socket
 import json
 import time
 
-ENABLE_BLINK = True
+ENABLE_BLINK = False
 ENABLE_ATTENTION = not ENABLE_BLINK
 
 def parse(data):
@@ -13,10 +13,12 @@ def parse(data):
         if ENABLE_ATTENTION:
             if 'eSense' in json_data:
                 print("Attention value: " + str(json_data['eSense']['attention']))
+                print()
 
         if ENABLE_BLINK:
             if('blinkStrength' in json_data):
                 print("Blink value: " + str(json_data['blinkStrength']))           
+                print()
 
 
     except:
